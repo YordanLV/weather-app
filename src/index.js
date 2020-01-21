@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 
 import App from "containers/App";
 import configureStore from "store";
+import Helmet from "components/Helmet";
 import Layout from "layout";
 
 const store = configureStore();
@@ -11,6 +12,7 @@ const store = configureStore();
 ReactDOM.render(
   <Provider store={store}>
     <Layout>
+      <Helmet />
       <App />
     </Layout>
   </Provider>,
