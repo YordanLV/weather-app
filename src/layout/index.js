@@ -1,5 +1,7 @@
 import React from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
+
+import "./fonts.css";
 import "./reset.css";
 
 const theme = {
@@ -9,17 +11,16 @@ const theme = {
 };
 
 const GlobalStyle = createGlobalStyle`
+  /* Google Fonts */
   html{
-    scroll-behavior: smooth;
     /* 1rem = 10px */
     font-size: 62.5%;
+    scroll-behavior: smooth;
   }
   body {
     background-color: white;
     font-size: 1.6rem;
-    /* Largest mobile device is with 425px screen width */
-    max-width: 42.5rem;
-    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
   }
 `;
 
