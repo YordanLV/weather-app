@@ -1,5 +1,6 @@
 import React from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
+import "./reset.css";
 
 const theme = {
   fuelYellow: "#EEB625",
@@ -8,6 +9,9 @@ const theme = {
 };
 
 const GlobalStyle = createGlobalStyle`
+  html{
+    scroll-behavior: smooth;
+  }
   body {
     background-color: ${props => props.theme.peachy};
   }
