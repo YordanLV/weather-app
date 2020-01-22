@@ -11,9 +11,15 @@ const theme = {
 const GlobalStyle = createGlobalStyle`
   html{
     scroll-behavior: smooth;
+    /* 1rem = 10px */
+    font-size: 62.5%;
   }
   body {
-    background-color: ${props => props.theme.peachy};
+    background-color: white;
+    font-size: 1.6rem;
+    /* Largest mobile device is with 425px screen width */
+    max-width: 42.5rem;
+    margin: 0 auto;
   }
 `;
 

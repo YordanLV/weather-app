@@ -21,7 +21,7 @@ const useTransition = () => {
   }, []);
 
   useEffect(() => {
-    const debounceTime = 150;
+    const debounceTime = 50;
     window.addEventListener(
       "scroll",
       debounce(memoizedCallbackPosition, debounceTime)
