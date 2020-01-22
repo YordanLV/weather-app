@@ -6,6 +6,7 @@ const TempWidgetWrapper = styled.div`
   top: 7.1rem;
   left: 3rem;
   transition: ease-in-out top 0.5s;
+  z-index: 2;
   .location {
     margin-bottom: 0.8rem;
     input {
