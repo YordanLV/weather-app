@@ -2,8 +2,9 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import appActions from "actions";
-import useTransition from "hooks/useTransition";
+import InitialScreen from "containers/InitialScreen";
 import Section from "components/Section";
+import useTransition from "hooks/useTransition";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -20,7 +21,8 @@ const App = () => {
   return (
     <>
       <Section inputColor={props => props.theme.bayGreen}>
-        {JSON.stringify(weather)}
+        {/* {JSON.stringify(weather)} */}
+        <InitialScreen appState={appState} />
       </Section>
       <Section inputColor={props => props.theme.peachy}></Section>
     </>

@@ -1,5 +1,7 @@
 import React from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
+
+import "./fonts.css";
 import "./reset.css";
 
 const theme = {
@@ -9,11 +11,16 @@ const theme = {
 };
 
 const GlobalStyle = createGlobalStyle`
+  /* Google Fonts */
   html{
+    /* 1rem = 10px */
+    font-size: 62.5%;
     scroll-behavior: smooth;
   }
   body {
-    background-color: ${props => props.theme.peachy};
+    background-color: white;
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
   }
 `;
 

@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
+
 import debounce from "util/debounce";
+import scrollToBottom from "util/scrollToBottom";
 
 const useTransition = () => {
   let lastScrollTop = 0;
@@ -9,7 +11,7 @@ const useTransition = () => {
     const st = window.pageYOffset || document.documentElement.scrollTop;
     if (st > lastScrollTop) {
       /* Transition all the way DOWN to the screen  */
-      window.scrollTo(0, document.body.scrollHeight);
+      scrollToBottom();
       setPosition("details");
     } else {
       /* Transiton all the way UP to the screen  */
@@ -21,7 +23,7 @@ const useTransition = () => {
   }, []);
 
   useEffect(() => {
-    const debounceTime = 150;
+    const debounceTime = 50;
     window.addEventListener(
       "scroll",
       debounce(memoizedCallbackPosition, debounceTime)
