@@ -2,10 +2,10 @@ import React from "react";
 
 import TempWidget from "components/TempWidget";
 
-const InitialScreen = () => {
+const InitialScreen = ({ appState }) => {
   return (
     <div>
-      <TempWidget />
+      <TempWidget appState={appState} />
     </div>
   );
 };

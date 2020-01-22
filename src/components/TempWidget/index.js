@@ -1,20 +1,33 @@
 import React from "react";
-import styled from "styled-components";
 
-const TempWidgetWrapper = styled.div`
-  position: fixed;
-  color: white;
-  top: 9.4rem;
-  left: 3rem;
-  font-size: 9.6rem;
-  font-weight: 800;
-`;
-const Temperatura = styled.div``;
+import TempWidgetWrapper from "./TempWidgetWrapper";
+import scrollToBottom from "util/scrollToBottom";
 
-const TempWidget = () => {
+import searchIcon from "images/magnifying-glass.svg";
+import rainIcon from "images/rainy.svg";
+import sunIcon from "images/sunny.svg";
+
+const TempWidget = ({ appState }) => {
   return (
-    <TempWidgetWrapper>
-      <Temperatura>27°</Temperatura>
+    <TempWidgetWrapper appState={appState}>
+      <div class="location">
+        <input id="location" placeholder="Location" type="text" />
+        <label for="location">
+          <img src={searchIcon} alt="Search" />
+        </label>
+      </div>
+      <div class="temperature">
+        27°<sup>C</sup>
+        <img
+          class="weather-icon"
+          src={false ? rainIcon : sunIcon}
+          alt="Rainy"
+        />
+      </div>
+      <span class="weather-text">Sunny</span>
+      <span onClick={scrollToBottom} class="more-details">
+        More details
+      </span>
     </TempWidgetWrapper>
   );
 };

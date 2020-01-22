@@ -22,7 +22,7 @@ const App = () => {
     <>
       <Section inputColor={props => props.theme.bayGreen}>
         {/* {JSON.stringify(weather)} */}
-        <InitialScreen />
+        <InitialScreen appState={appState} />
       </Section>
       <Section inputColor={props => props.theme.peachy}></Section>
     </>
