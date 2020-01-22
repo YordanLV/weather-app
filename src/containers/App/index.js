@@ -16,12 +16,12 @@ const App = () => {
   dispatch(appActions.set_app_state(useTransition()));
 
   const appState = useSelector(store => store.appReducer.appState);
-  const weather = useSelector(store => store.weatherReducer.weather);
+  const weatherData = useSelector(store => store.weatherReducer.weather);
 
   return (
     <>
       <Section inputColor={props => props.theme.bayGreen}>
-        {/* {JSON.stringify(weather)} */}
+        {/* {JSON.stringify(weatherData)} */}
         <InitialScreen appState={appState} />
       </Section>
       <Section inputColor={props => props.theme.peachy}></Section>

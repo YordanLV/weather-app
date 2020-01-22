@@ -10,22 +10,22 @@ import sunIcon from "images/sunny.svg";
 const TempWidget = ({ appState }) => {
   return (
     <TempWidgetWrapper appState={appState}>
-      <div class="location">
+      <div className="location">
         <input id="location" placeholder="Location" type="text" />
-        <label for="location">
+        <label htmlFor="location">
           <img src={searchIcon} alt="Search" />
         </label>
       </div>
-      <div class="temperature">
+      <div className="temperature">
         27°<sup>C</sup>
         <img
-          class="weather-icon"
+          className="weather-icon"
           src={false ? rainIcon : sunIcon}
           alt="Rainy"
         />
       </div>
-      <span class="weather-text">Sunny</span>
-      <span onClick={scrollToBottom} class="more-details">
+      <span className="weather-text">{false ? "Rainy" : "Sunny"}</span>
+      <span onClick={scrollToBottom} className="more-details">
         More details
       </span>
     </TempWidgetWrapper>
