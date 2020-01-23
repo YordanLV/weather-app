@@ -2,9 +2,11 @@ import { applyMiddleware, createStore } from "redux";
 import { createLogicMiddleware } from "redux-logic";
 
 import fetchWeatherLogic from "logic/fetchWeatherLogic";
+import fetchForecastLogic from "logic/fetchForecastLogic";
+
 import rootReducer from "reducers";
 
-const arrLogic = [fetchWeatherLogic];
+const arrLogic = [fetchWeatherLogic, fetchForecastLogic];
 
 const logicMiddleware = createLogicMiddleware(arrLogic);
 

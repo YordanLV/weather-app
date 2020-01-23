@@ -26,7 +26,7 @@ const TempWidget = ({
   const isFetching = fetchStatus === "fetching";
   const isMetric = unitSystem === "metric";
   const isRain = weather === "Rain";
-  const temp = Math.round(currentWeatherData.main?.temp);
+  const temp = currentWeatherData.main?.temp;
   return (
     <TempWidgetWrapper appState={appState}>
       <div className="location">
@@ -46,7 +46,10 @@ const TempWidget = ({
         </label>
       </div>
       <div className="temperature">
-        {handleNaN(isMetric ? temp : cToFahr(temp), "--")}
+        {handleNaN(
+          isMetric ? Math.round(temp) : Math.round(cToFahr(temp)),
+          "--"
+        )}
         <div className="indicators">
           <span>°</span>
           <img

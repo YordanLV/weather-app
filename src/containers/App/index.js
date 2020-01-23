@@ -2,8 +2,8 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import appActions from "actions";
+import DetailsScreen from "containers/DetailsScreen";
 import InitialScreen from "containers/InitialScreen";
-import Section from "components/Section";
 import useTransition from "hooks/useTransition";
 
 const App = () => {
@@ -16,7 +16,7 @@ const App = () => {
   return (
     <>
       <InitialScreen appState={appState} />
-      <Section inputColor={props => props.theme.peachy}></Section>
+      <DetailsScreen appState={appState} />
     </>
   );
 };
