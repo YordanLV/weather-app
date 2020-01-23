@@ -11,7 +11,6 @@ const theme = {
 };
 
 const GlobalStyle = createGlobalStyle`
-  /* Google Fonts */
   html{
     /* 1rem = 10px */
     font-size: 62.5%;

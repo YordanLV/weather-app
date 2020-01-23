@@ -1,6 +1,8 @@
 import axios from "axios";
 import { createLogic } from "redux-logic";
 
+import { currentWeatherApi } from "apis";
+
 import {
   FETCH_WEATHER,
   FETCH_WEATHER_CANCEL,
@@ -15,9 +17,7 @@ const fetchPollsLogic = createLogic({
 
   process({ getState, action }, dispatch, done) {
     axios
-      .get(
-        "https://api.openweathermap.org/data/2.5/weather?q=London,uk&cnt=6&units=metric&appid=e8faecef1e5c6087aa86ae7bbb97fb84"
-      )
+      .get(currentWeatherApi(action.payload.city, action.payload.unitSystem))
       .then(resp => resp.data)
       .then(data => dispatch({ type: FETCH_WEATHER_SUCCESS, payload: data }))
       .catch(err => {

@@ -16,6 +16,7 @@ const TempWidgetWrapper = styled.div`
       border-style: hidden;
       outline: none;
       margin-left: 0.3rem;
+      padding: 0.5rem;
       font-size: 1.8rem;
       font-weight: 600;
       text-transform: uppercase;
@@ -25,13 +26,6 @@ const TempWidgetWrapper = styled.div`
       }
     }
   }
-  .weather-icon {
-    position: absolute;
-    height: 3.5rem;
-    top: 8rem;
-    left: 11rem;
-    transition: ease-in-out all 0.5s;
-  }
   .temperature {
     font-size: 9.6rem;
     font-weight: 600;
@@ -40,6 +34,18 @@ const TempWidgetWrapper = styled.div`
       position: relative;
       vertical-align: top;
       font-size: 50%;
+    }
+  }
+  .indicators {
+    display: inline-block;
+    position: relative;
+    margin-left: 0.5rem;
+    .weather-icon {
+      position: absolute;
+      height: 3.5rem;
+      bottom: 1.5rem;
+      left: 0;
+      transition: ease-in-out all 0.5s;
     }
   }
   .weather-text {
@@ -62,7 +68,6 @@ const TempWidgetWrapper = styled.div`
     }
     .weather-icon {
       opacity: 0;
-      left: 100%;
     }
     .more-details{
       display:none;

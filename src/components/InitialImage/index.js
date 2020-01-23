@@ -19,10 +19,10 @@ const InitalImg = styled.img`
   `}
 `;
 
-const InitialImage = ({ appState }) => {
-  return (
-    <InitalImg src={true ? sunny : rainy} appState={appState} alt="Rainy" />
-  );
+const InitialImage = ({ appState, weather }) => {
+  if (weather === "Rain")
+    return <InitalImg src={rainy} appState={appState} alt="Rainy" />;
+  else return <InitalImg src={sunny} appState={appState} alt="Sunny" />;
 };
 
 export default InitialImage;

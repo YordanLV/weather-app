@@ -7,24 +7,42 @@ import searchIcon from "images/magnifying-glass.svg";
 import rainIcon from "images/rainy.svg";
 import sunIcon from "images/sunny.svg";
 
-const TempWidget = ({ appState }) => {
+const TempWidget = ({
+  appState,
+  currentWeatherData,
+  city,
+  changeUnitSystem,
+  getCity,
+  getWeather,
+  weather
+}) => {
+  const isRain = weather === "Rain";
   return (
     <TempWidgetWrapper appState={appState}>
       <div className="location">
-        <input id="location" placeholder="Location" type="text" />
+        <input
+          id="location"
+          placeholder={city}
+          type="text"
+          onChange={getCity}
+        />
         <label htmlFor="location">
-          <img src={searchIcon} alt="Search" />
+          <img onClick={getWeather} src={searchIcon} alt="Search" />
         </label>
       </div>
       <div className="temperature">
-        27°<sup>C</sup>
-        <img
-          className="weather-icon"
-          src={false ? rainIcon : sunIcon}
-          alt="Rainy"
-        />
+        {Math.round(currentWeatherData.main?.temp)}
+        <div className="indicators">
+          <span>°</span>
+          <img
+            className="weather-icon"
+            src={isRain ? rainIcon : sunIcon}
+            alt="Rainy"
+          />
+        </div>
+        <sup onClick={changeUnitSystem}>C / F</sup>
       </div>
-      <span className="weather-text">{false ? "Rainy" : "Sunny"}</span>
+      <span className="weather-text">{isRain ? "Rainy" : "Sunny"}</span>
       <span onClick={scrollToBottom} className="more-details">
         More details
       </span>
