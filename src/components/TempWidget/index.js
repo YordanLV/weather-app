@@ -4,6 +4,7 @@ import cToFahr from "util/cToFahr";
 import handleNaN from "util/handleNaN";
 import TempWidgetWrapper from "./TempWidgetWrapper";
 import scrollToBottom from "util/scrollToBottom";
+import scrollToTop from "util/scrollToTop";
 import Units from "./Units";
 
 import loader from "images/loader.svg";
@@ -33,13 +34,14 @@ const TempWidget = ({
           id="location"
           placeholder={city}
           type="text"
+          onClick={scrollToTop}
           onChange={setCity}
         />
         <label htmlFor="location">
           <img
             onClick={getWeather}
             src={isFetching ? loader : searchIcon}
-            height="15"
+            height="20"
             alt="Search"
           />
         </label>

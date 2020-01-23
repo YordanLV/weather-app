@@ -13,10 +13,12 @@ const theme = {
 const GlobalStyle = createGlobalStyle`
   html{
     /* 1rem = 10px */
+    overflow: hidden;
     font-size: 62.5%;
     scroll-behavior: smooth;
   }
   body {
+    overflow-x: hidden;
     background-color: white;
     font-size: 1.6rem;
     font-family: 'Roboto', sans-serif;

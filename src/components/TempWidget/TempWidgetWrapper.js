@@ -15,7 +15,6 @@ const TempWidgetWrapper = styled.div`
       max-width: 10rem;
       border-style: hidden;
       outline: none;
-      margin-left: 0.3rem;
       padding: 0.5rem;
       font-size: 1.8rem;
       font-weight: 600;
@@ -34,10 +33,13 @@ const TempWidgetWrapper = styled.div`
       position: relative;
       vertical-align: top;
       font-size: 50%;
-      span {
-        opacity: 0.5;
-        transition: opacity ease-in-out 0.5;
-      }
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0.2) 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
   .indicators {
