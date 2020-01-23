@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import appActions from "actions";
@@ -9,31 +9,27 @@ import TempWidget from "components/TempWidget";
 const InitialScreen = ({ appState }) => {
   const dispatch = useDispatch();
 
-  const [city, setCity] = useState("New York");
-  const [unitSystem, setUnitSystem] = useState("metric");
+  const { currentWeatherData, fetchStatus } = useSelector(
+    store => store.weatherReducer
+  );
 
-  useEffect(() => {
-    // dispatch(appActions.fetch_weather_data(city, unitSystem));
-  }, [city, dispatch, unitSystem]);
+  const { city, unitSystem } = useSelector(store => store.userInputReducer);
 
-  const getCity = event => {
+  const setCity = event => {
     const city = event.target.value;
-    // dispatch(appActions.fetch_weather_data(city, unitSystem));
-    setCity(city);
+    dispatch(appActions.set_user_inputs(city, unitSystem));
+  };
+
+  const setUnitSystem = () => {
+    dispatch(
+      appActions.set_user_inputs(
+        city,
+        unitSystem === "metric" ? "imperail" : "metric"
+      )
+    );
   };
 
   const getWeather = () => {
-    dispatch(appActions.fetch_weather_data(city, unitSystem));
-  };
-
-  const currentWeatherData = useSelector(
-    store => store.weatherReducer.currentWeatherData
-  );
-
-  const changeUnitSystem = () => {
-    unitSystem === "metric"
-      ? setUnitSystem("imperial")
-      : setUnitSystem("metric");
     dispatch(appActions.fetch_weather_data(city, unitSystem));
   };
 
@@ -47,11 +43,13 @@ const InitialScreen = ({ appState }) => {
     >
       <TempWidget
         appState={appState}
-        changeUnitSystem={changeUnitSystem}
         city={city}
         currentWeatherData={currentWeatherData}
-        getCity={getCity}
+        fetchStatus={fetchStatus}
         getWeather={getWeather}
+        setCity={setCity}
+        setUnitSystem={setUnitSystem}
+        unitSystem={unitSystem}
         weather={weather}
       />
       <InitialImage appState={appState} weather={weather} />

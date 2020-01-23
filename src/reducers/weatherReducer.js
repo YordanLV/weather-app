@@ -15,13 +15,13 @@ export default function weatherReducer(state = initialState, action) {
     case FETCH_WEATHER:
       return {
         ...state,
-        fetchStatus: `fetching... ${new Date().toLocaleString()}`,
+        fetchStatus: `fetching`,
         currentWeatherData: {}
       };
     case FETCH_WEATHER_SUCCESS:
       return {
         ...state,
-        fetchStatus: `Results from ${new Date().toLocaleString()}`,
+        fetchStatus: `fetched`,
         currentWeatherData: action.payload
       };
     case FETCH_WEATHER_FAILED:

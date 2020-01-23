@@ -34,6 +34,10 @@ const TempWidgetWrapper = styled.div`
       position: relative;
       vertical-align: top;
       font-size: 50%;
+      span {
+        opacity: 0.5;
+        transition: opacity ease-in-out 0.5;
+      }
     }
   }
   .indicators {
