@@ -18,10 +18,8 @@ const fetchPollsLogic = createLogic({
   process({ getState, action }, dispatch, done) {
     axios
       .get(currentWeatherApi(action.payload.city))
-      .then(console.log("isLoading"))
       .then(resp => resp.data)
       .then(data => dispatch({ type: FETCH_WEATHER_SUCCESS, payload: data }))
-      .then(console.log("Loaded"))
       .catch(err => {
         console.error(err);
         dispatch({ type: FETCH_WEATHER_FAILED, payload: err, error: true });

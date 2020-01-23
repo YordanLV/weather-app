@@ -16,7 +16,7 @@ const DetailsScreen = ({ appState }) => {
   }, [appState, city, dispatch]);
   return (
     <Section inputColor={props => props.theme.peachy}>
-      
+      {console.log(forecastWeatherData.list)}
     </Section>
   );
 };

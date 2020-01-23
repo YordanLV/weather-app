@@ -1,19 +1,7 @@
 import React from "react";
 
 const Units = ({ isMetric }) => {
-  return (
-    <>
-      {isMetric ? (
-        <>
-          C / <span>F</span>
-        </>
-      ) : (
-        <>
-          F / <span>C</span>
-        </>
-      )}
-    </>
-  );
+  return <>{isMetric ? <>C / F</> : <>F / C</>}</>;
 };
 
 export default Units;
