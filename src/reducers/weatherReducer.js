@@ -6,7 +6,7 @@ import {
 } from "actionTypes";
 
 const initialState = {
-  weather: {},
+  currentWeatherData: {},
   fetchStatus: ""
 };
 
@@ -15,14 +15,14 @@ export default function weatherReducer(state = initialState, action) {
     case FETCH_WEATHER:
       return {
         ...state,
-        fetchStatus: `fetching... ${new Date().toLocaleString()}`,
-        weather: {}
+        fetchStatus: `fetching`,
+        currentWeatherData: {}
       };
     case FETCH_WEATHER_SUCCESS:
       return {
         ...state,
-        weather: action.payload,
-        fetchStatus: `Results from ${new Date().toLocaleString()}`
+        fetchStatus: `fetched`,
+        currentWeatherData: action.payload
       };
     case FETCH_WEATHER_FAILED:
       return {
