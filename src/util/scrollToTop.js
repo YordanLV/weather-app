@@ -1,6 +1,6 @@
 export default function() {
   window.scrollTo({
-    top: document.body.scrollHeight,
+    top: 0,
     behavior: "smooth"
   });
 }
