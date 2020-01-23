@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import appActions from "actions";
+import Graph from "components/Graph";
 import Section from "components/Section";
 
 const DetailsScreen = ({ appState }) => {
@@ -16,7 +17,10 @@ const DetailsScreen = ({ appState }) => {
   }, [appState, city, dispatch]);
   return (
     <Section inputColor={props => props.theme.peachy}>
-      {console.log(forecastWeatherData.list)}
+      <Graph
+        forecastWeatherData={forecastWeatherData}
+        unitSystem={unitSystem}
+      />
     </Section>
   );
 };
