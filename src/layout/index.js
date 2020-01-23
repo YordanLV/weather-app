@@ -20,6 +20,7 @@ const GlobalStyle = createGlobalStyle`
     background-color: white;
     font-size: 1.6rem;
     font-family: 'Roboto', sans-serif;
+    /* overflow: hidden; */
   }
 `;
 

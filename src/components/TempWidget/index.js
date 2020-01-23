@@ -5,6 +5,7 @@ import handleNaN from "util/handleNaN";
 import TempWidgetWrapper from "./TempWidgetWrapper";
 import scrollToBottom from "util/scrollToBottom";
 import Units from "./Units";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 import loader from "images/loader.svg";
 import searchIcon from "images/magnifying-glass.svg";
@@ -59,9 +60,9 @@ const TempWidget = ({
         </sup>
       </div>
       <span className="weather-text">{isRain ? "Rainy" : "Sunny"}</span>
-      <span onClick={scrollToBottom} className="more-details">
+      <AnchorLink href="details" className="more-details">
         More details
-      </span>
+      </AnchorLink>
     </TempWidgetWrapper>
   );
 };

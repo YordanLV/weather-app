@@ -8,7 +8,7 @@ const InitalImg = styled.img`
   position: absolute;
   bottom: 0;
   width: 100%;
-  max-height: 45rem;
+  max-height: 55vh;
   opacity: 1;
   transition: 0.5s opacity ease-in-out;
   z-index: 1;

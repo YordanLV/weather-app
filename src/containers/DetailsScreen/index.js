@@ -15,9 +15,7 @@ const DetailsScreen = ({ appState }) => {
     }
   }, [appState, city, dispatch]);
   return (
-    <Section inputColor={props => props.theme.peachy}>
-      
-    </Section>
+    <Section id="details" inputColor={props => props.theme.peachy}></Section>
   );
 };
 

@@ -11,15 +11,20 @@ const useTransition = () => {
     const st = window.pageYOffset || document.documentElement.scrollTop;
     if (st > lastScrollTop) {
       /* Transition all the way DOWN to the screen  */
-      scrollToBottom();
+      // window.scrollTo(0, document.body.scrollHeight);
       setPosition("details");
     } else {
-      /* Transiton all the way UP to the screen  */
-      window.scrollTo(0, 0);
+      // /* Transiton all the way UP to the screen  */
+      // window.scrollTo(0, 0);
+      // window.scrollTo({
+      //   top: 0,
+      //   behavior: "smooth"
+      // });
       setPosition("initial");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     lastScrollTop = st <= 0 ? 0 : st;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
