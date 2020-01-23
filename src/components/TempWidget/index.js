@@ -25,7 +25,7 @@ const TempWidget = ({
 }) => {
   const isFetching = fetchStatus === "fetching";
   const isMetric = unitSystem === "metric";
-  const isRain = weather === "Rain";
+  const isRainy = weather === "Rain";
   const temp = currentWeatherData.main?.temp;
   return (
     <TempWidgetWrapper appState={appState}>
@@ -41,7 +41,7 @@ const TempWidget = ({
           <img
             onClick={getWeather}
             src={isFetching ? loader : searchIcon}
-            height="20"
+            height="16"
             alt="Search"
           />
         </label>
@@ -55,7 +55,7 @@ const TempWidget = ({
           <span>°</span>
           <img
             className="weather-icon"
-            src={isRain ? rainIcon : sunIcon}
+            src={isRainy ? rainIcon : sunIcon}
             alt="Rainy"
           />
         </div>
@@ -63,7 +63,7 @@ const TempWidget = ({
           <Units isMetric={isMetric} />
         </sup>
       </div>
-      <span className="weather-text">{isRain ? "Rainy" : "Sunny"}</span>
+      <span className="weather-text">{isRainy ? "Rainy" : weather}</span>
       <span onClick={scrollToBottom} className="more-details">
         More details
       </span>

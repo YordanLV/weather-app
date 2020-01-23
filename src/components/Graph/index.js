@@ -33,7 +33,8 @@ const Graph = ({ forecastWeatherData, unitSystem }) => {
   useEffect(() => {
     const c = canvasRef.current;
     const ctx = c.getContext("2d");
-    const offset = 35;
+    const Yoffset = 35;
+    const Xoffset = 5;
     const dotWidht = 8;
     const currentDate = date();
 
@@ -50,10 +51,11 @@ const Graph = ({ forecastWeatherData, unitSystem }) => {
     ctx.font = "16px Roboto";
 
     if (forcastList) {
-      let xAxis = 0;
+      let xAxis = Xoffset;
       for (let i = 0; i < 8; i++) {
         let percCalcTemp =
-          percentageCalc(forcastList && forcastList[i].main.temp * 10) + offset;
+          percentageCalc(forcastList && forcastList[i].main.temp * 10) +
+          Yoffset;
         let tempText = Math.round(
           isMetric
             ? forcastList[i].main.temp
@@ -72,7 +74,7 @@ const Graph = ({ forecastWeatherData, unitSystem }) => {
         );
         ctx.fillText(tempText, xAxis, percCalcTemp - 20);
         currentDate.addHours(3);
-        ctx.fillText(currentDate.getHours(), xAxis, 125);
+        ctx.fillText(currentDate.getHours(), xAxis - Xoffset, 125);
         xAxis += cw / 8;
       }
     }

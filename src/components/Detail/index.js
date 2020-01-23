@@ -5,9 +5,9 @@ import IconSwitch from "components/IconSwitch";
 
 const DetailWrapper = styled.div`
   display: flex;
-  width: calc(50% - 8rem);
-  padding-left: 4rem;
-  padding-right: 4rem;
+  width: calc(50% - 6rem);
+  padding-left: 3rem;
+  padding-right: 3rem;
   flex-direction: column;
   color: white;
   flex-direction: row;
