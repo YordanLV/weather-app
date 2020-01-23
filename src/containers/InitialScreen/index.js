@@ -30,7 +30,7 @@ const InitialScreen = ({ appState }) => {
   };
 
   const getWeather = () => {
-    dispatch(appActions.fetch_weather_data(city, unitSystem));
+    dispatch(appActions.fetch_weather_data(city));
   };
 
   const weather =
