@@ -24,6 +24,9 @@ const TempWidgetWrapper = styled.div`
         opacity: 0.75;
       }
     }
+    input::-internal-autofill-selected {
+      background-color: transparent;
+    }
   }
   .temperature {
     font-size: 9.6rem;

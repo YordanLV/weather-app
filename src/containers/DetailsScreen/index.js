@@ -20,15 +20,14 @@ const DetailsScreen = ({ appState }) => {
   }, [appState, city, dispatch]);
 
   const { main, clouds, wind } = currentWeatherData;
-  console.log(main);
 
   return (
     <Section inputColor={props => props.theme.peachy}>
-      <DetailsGrid style={{ marginTop: "35vh" }}>
-        <Detail icon="windSpeed">{wind?.speed || 0}</Detail>
-        <Detail icon="pressure"> {main?.pressure || 0}</Detail>
-        <Detail icon="cloudines"> {clouds?.all || 0}</Detail>
-        <Detail icon="humidity">{main?.humidity || 0}</Detail>
+      <DetailsGrid style={{ marginTop: "25rem" }}>
+        <Detail icon="windSpeed">{wind?.speed || 0} km/h</Detail>
+        <Detail icon="pressure"> {main?.pressure || 0} hPa</Detail>
+        <Detail icon="cloudines"> {clouds?.all || 0} cn</Detail>
+        <Detail icon="humidity">{main?.humidity || 0} %</Detail>
       </DetailsGrid>
       <Graph
         forecastWeatherData={forecastWeatherData}
