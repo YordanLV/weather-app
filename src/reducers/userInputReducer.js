@@ -1,7 +1,7 @@
 import { USER_INPUTS } from "actionTypes";
 
 const initialState = {
-  city: "Location",
+  city: "New York",
   unitSystem: "metric"
 };
 
