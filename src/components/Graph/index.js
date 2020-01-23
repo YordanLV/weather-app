@@ -5,11 +5,16 @@ import cToFahr from "util/cToFahr";
 import date from "util/date";
 import percentageCalc from "util/percCalc";
 
+const ScrollWrapper = styled.div`
+  overflow-x: scroll;
+  width: 100%;
+`;
+
 const GraphWrapper = styled.div`
   position: absolute;
   bottom: 0;
-  width: 100%;
-  overflow-y: scroll;
+  left: 0;
+  right: 0;
   -webkit-overflow-scrolling: touch;
   padding-left: 3rem;
   padding-right: 3rem;
@@ -76,7 +81,9 @@ const Graph = ({ forecastWeatherData, unitSystem }) => {
 
   return (
     <GraphWrapper>
-      <canvas ref={canvasRef} />
+      <ScrollWrapper>
+        <canvas ref={canvasRef} />
+      </ScrollWrapper>
     </GraphWrapper>
   );
 };
