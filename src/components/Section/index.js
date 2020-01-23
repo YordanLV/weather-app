@@ -5,6 +5,7 @@ const SectionWrapper = styled.section`
   background-color: ${props => props.inputColor || "white"};
   height: 100vh;
   overflow: auto;
+  position: relative;
 `;
 
 const Section = ({ children, inputColor }) => {
