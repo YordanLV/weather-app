@@ -1,8 +1,10 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Swipeable } from "react-swipeable";
 
 import appActions from "actions";
 import InitialImage from "components/InitialImage";
+import scrollToBottom from "util/scrollToBottom";
 import Section from "components/Section";
 import TempWidget from "components/TempWidget";
 
@@ -36,24 +38,30 @@ const InitialScreen = ({ appState }) => {
   const weather =
     currentWeatherData?.weather && currentWeatherData.weather[0].main;
   return (
-    <Section
-      inputColor={props =>
-        weather === "Rain" ? props.theme.bayGreen : props.theme.fuelYellow
+    <Swipeable
+      onSwiped={eventData =>
+        (eventData.dir === "Down" || eventData.dir === "Up") && scrollToBottom()
       }
     >
-      <TempWidget
-        appState={appState}
-        city={city}
-        currentWeatherData={currentWeatherData}
-        fetchStatus={fetchStatus}
-        getWeather={getWeather}
-        setCity={setCity}
-        setUnitSystem={setUnitSystem}
-        unitSystem={unitSystem}
-        weather={weather}
-      />
-      <InitialImage appState={appState} weather={weather} />
-    </Section>
+      <Section
+        inputColor={props =>
+          weather === "Rain" ? props.theme.bayGreen : props.theme.fuelYellow
+        }
+      >
+        <TempWidget
+          appState={appState}
+          city={city}
+          currentWeatherData={currentWeatherData}
+          fetchStatus={fetchStatus}
+          getWeather={getWeather}
+          setCity={setCity}
+          setUnitSystem={setUnitSystem}
+          unitSystem={unitSystem}
+          weather={weather}
+        />
+        <InitialImage appState={appState} weather={weather} />
+      </Section>
+    </Swipeable>
   );
 };
 
