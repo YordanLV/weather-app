@@ -16,7 +16,7 @@ const DetailWrapper = styled.div`
     align-items: center;
   }
   .text-wrapper {
-    min-width: 4rem;
+    min-width: 6rem;
   }
   .icon-wrapper {
     margin-left: 1rem;
