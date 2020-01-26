@@ -10,7 +10,7 @@ import {
   FETCH_WEATHER_FAILED
 } from "actionTypes";
 
-const fetchPollsLogic = createLogic({
+const fetchWeatherLogic = createLogic({
   type: FETCH_WEATHER, // only apply this logic to this type
   cancelType: FETCH_WEATHER_CANCEL, // cancel on this type
   latest: true, // only take latest
@@ -28,4 +28,4 @@ const fetchPollsLogic = createLogic({
   }
 });
 
-export default fetchPollsLogic;
+export default fetchWeatherLogic;

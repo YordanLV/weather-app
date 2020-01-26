@@ -10,7 +10,7 @@ import {
   FETCH_FORECAST_FAILED
 } from "actionTypes";
 
-const fetchPollsLogic = createLogic({
+const fetchForecastLogic = createLogic({
   type: FETCH_FORECAST, // only apply this logic to this type
   cancelType: FETCH_FORECAST_CANCEL, // cancel on this type
   latest: true, // only take latest
@@ -28,4 +28,4 @@ const fetchPollsLogic = createLogic({
   }
 });
 
-export default fetchPollsLogic;
+export default fetchForecastLogic;
