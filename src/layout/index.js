@@ -13,8 +13,8 @@ const theme = {
 const GlobalStyle = createGlobalStyle`
   html{
     /* 1rem = 10px */
-    overflow: hidden;
     font-size: 62.5%;
+    overflow: hidden;
     scroll-behavior: smooth;
   }
   body {
