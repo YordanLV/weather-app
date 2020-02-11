@@ -1,5 +1,5 @@
 import React from "react";
-import { ThemeProvider, createGlobalStyle } from "styled-components";
+import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 
 import "./fonts.css";
 import "./reset.css";
@@ -25,11 +25,15 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const Container = styled.div`
+  max-width: 76.8rem;
+`;
+
 const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      {children}
+      <Container>{children}</Container>
     </ThemeProvider>
   );
 };

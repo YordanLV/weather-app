@@ -16,6 +16,7 @@ const fetchForecastLogic = createLogic({
   latest: true, // only take latest
 
   process({ getState, action }, dispatch, done) {
+    console.log(action);
     axios
       .get(forecastWeatherApi(action.payload.city))
       .then(resp => resp.data)
