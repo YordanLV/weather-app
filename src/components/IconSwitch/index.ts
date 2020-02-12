@@ -3,7 +3,7 @@ import humidity from "images/humidity.svg";
 import pressure from "images/pressure.svg";
 import windSpeed from "images/wind-speed.svg";
 
-function IconSwitch(icon) {
+function IconSwitch(icon: string) {
   switch (icon) {
     case "cloudines":
       return cloudines;
