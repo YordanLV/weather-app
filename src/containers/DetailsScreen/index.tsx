@@ -6,7 +6,6 @@ import appActions from 'actions'
 import DetailsGrid from 'components/DetailsGrid'
 import Graph from 'components/Graph'
 import Section from 'components/Section'
-import { withTheme } from 'styled-components'
 
 type Props = {
   appState: string
