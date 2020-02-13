@@ -1,7 +1,7 @@
 import { Reducer } from "redux";
 import { WeatherActionTypes } from "actionTypes";
 
-interface WeatherState {
+export interface WeatherState {
   readonly currentWeatherData: {},
   readonly fetchStatus: string
 }

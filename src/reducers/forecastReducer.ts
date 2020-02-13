@@ -1,7 +1,7 @@
 import { Reducer } from "redux";
 import { WeatherForecastTypes } from 'actionTypes'
 
-interface ForcrastState {
+export interface ForcrastState {
   readonly forecastWeatherData: {},
   readonly fetchStatus: string
 }

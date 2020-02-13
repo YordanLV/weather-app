@@ -1,7 +1,7 @@
 import { Reducer } from "redux";
 import { UserInputTypes } from "actionTypes";
 
-interface UserInputState {
+export interface UserInputState {
   readonly city: string,
   readonly unitSystem: string
 }

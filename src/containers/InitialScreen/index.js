@@ -1,6 +1,8 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Swipeable } from "react-swipeable";
+import { withTheme } from 'styled-components'
+
 
 import appActions from "actions";
 import InitialImage from "components/InitialImage";
@@ -8,7 +10,7 @@ import scrollToBottom from "util/scrollToBottom";
 import Section from "components/Section";
 import TempWidget from "components/TempWidget";
 
-const InitialScreen = ({ appState }) => {
+const InitialScreen = ({ appState, theme }) => {
   const dispatch = useDispatch();
 
   const { currentWeatherData, fetchStatus } = useSelector(
@@ -44,9 +46,7 @@ const InitialScreen = ({ appState }) => {
       }
     >
       <Section
-        inputColor={props =>
-          weather === "Rain" ? props.theme.bayGreen : props.theme.fuelYellow
-        }
+        inputColor={weather === "Rain" ? theme.bayGreen : theme.fuelYellow}
       >
         <TempWidget
           appState={appState}
@@ -65,4 +65,4 @@ const InitialScreen = ({ appState }) => {
   );
 };
 
-export default InitialScreen;
+export default withTheme(InitialScreen);

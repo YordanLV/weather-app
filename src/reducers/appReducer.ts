@@ -1,7 +1,7 @@
 import { Reducer } from "redux";
 import { AppStateTypes } from "actionTypes";
 
-interface AppState {
+export interface AppState {
   readonly appState: string
 }
 

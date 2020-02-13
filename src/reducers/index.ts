@@ -1,9 +1,17 @@
 import { combineReducers } from "redux";
 
-import appReducer from "./appReducer";
-import forecastReducer from "./forecastReducer";
-import userInputReducer from "./userInputReducer";
-import weatherReducer from "./weatherReducer";
+import appReducer, { AppState } from "./appReducer";
+import forecastReducer, { ForcrastState } from "./forecastReducer";
+import userInputReducer, { UserInputState } from "./userInputReducer";
+import weatherReducer, { WeatherState } from "./weatherReducer";
+
+
+export interface ApplicationState {
+  appReducer: AppState,
+  forecastReducer: ForcrastState,
+  userInputReducer: UserInputState,
+  weatherReducer: WeatherState
+};
 
 const rootReducer = combineReducers({
   appReducer,

@@ -6,7 +6,7 @@ import fetchForecastLogic from "logic/fetchForecastLogic";
 
 import rootReducer from "reducers";
 
-const arrLogic = [fetchWeatherLogic, fetchForecastLogic];
+const arrLogic: Array<any> = [fetchWeatherLogic, fetchForecastLogic];
 
 const logicMiddleware = createLogicMiddleware(arrLogic);
 
