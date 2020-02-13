@@ -2,10 +2,7 @@ import axios from "axios";
 import { createLogic } from "redux-logic";
 
 import { currentWeatherApi } from "apis";
-
-import {
-  WeatherActionTypes
-} from "actionTypes";
+import { WeatherActionTypes } from "actionTypes";
 
 const fetchWeatherLogic = createLogic({
   type: WeatherActionTypes.FETCH_WEATHER, // only apply this logic to this type
